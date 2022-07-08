@@ -5,31 +5,43 @@ import cek from '../../Assets/Icon/icon_cek.png';
 import shopping_bag from '../../Assets/Icon/shopping-bag.png'
 import bell from '../../Assets/Icon/bell.png'
 import barang from '../../Assets/consts/barang';
+import { createStackNavigator } from "@react-navigation/stack";
+import { TouchableOpacity } from "react-native-gesture-handler";
+import LaundryBag from '../Laundry Bag/LaundryBagScreen';
+
+const Stack = createStackNavigator();
 
 const Favorites = () => {
     return (
         <View style={{backgroundColor:'white', width:'100%', height:'100%'}}>
-            <FavHeader/>
-            <ScrollView>
-            <View>{List()}</View>
-            </ScrollView>
-        </View>
+        <Stack.Navigator>
+          <Stack.Screen
+            name="Favorite"
+            component={FavHeader}
+            options={{headerShown: false, tabBarShowLabel: false}}
+          />
+          <Stack.Screen name="LaundryBag" component={LaundryBag} options={{headerShown: false, tabBarShowLabel: false}}/>
+        </Stack.Navigator>
+    </View>
     )
 }
 
-const FavHeader = () => {
+const FavHeader = ({navigation}) => {
     return (
-        <View style= {{flexDirection: 'row', marginTop: 44, marginBottom: 30}}>
+        <View style={{backgroundColor:'white', width:'100%', height:'100%'}}>
+            <View style= {{flexDirection: 'row', marginTop: 44, marginBottom: 30}}>
             <View style={{marginLeft: 30}}>
                 <Text style={styles.text1}>Favorite</Text>
             </View>
-            <View style={styles.circle1}>
-                <Image
-                source={shopping_bag}
-                style={styles.image1}
-                />
-                <Text style={styles.notif}>1</Text>
-            </View>
+            <TouchableOpacity onPress={() => navigation.navigate('LaundryBag')}>
+                <View style={{width: 42, height: 42,justifyContent:'center', alignItems: 'center', backgroundColor: '#E3F4FF', borderRadius: 42, marginLeft: 15, marginRight: 8}}>
+                    <Image
+                    source={shopping_bag}
+                    style={{width: 22, height: 22}}
+                    />
+                    <Text style={styles.notif}>1</Text>
+                </View>
+            </TouchableOpacity>
             <View style={styles.circle2}>
                 <Image
                 source={bell}
@@ -37,6 +49,10 @@ const FavHeader = () => {
                 />
                 <Text style={styles.notif}>3</Text>
             </View>
+        </View>
+        <ScrollView>
+            <View>{List()}</View>
+        </ScrollView>
         </View>
     )
 }

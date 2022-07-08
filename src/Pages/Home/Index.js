@@ -20,6 +20,7 @@ import barang from '../../Assets/consts/barang';
 import Order from '../MyOrder/order';
 import { createStackNavigator } from "@react-navigation/stack";
 import { TouchableOpacity } from "react-native-gesture-handler";
+import LaundryBag from '../Laundry Bag/LaundryBagScreen';
 
 const Stack = createStackNavigator();
 
@@ -30,7 +31,7 @@ class Home extends Component {
         <View style={{backgroundColor:'white', width:'100%', height:'100%'}}>
                 <Stack.Navigator screenOptions={{headerShown: false, showLabel: false}}>
                     <Stack.Screen name="Profile" component={Profile} options={{title: '',}}/>
-                    <Stack.Screen name="Order" component={Order}/>
+                    <Stack.Screen name="LaundryBag" component={LaundryBag}/>
                 </Stack.Navigator>
                 
         </View>      
@@ -79,7 +80,7 @@ const Profile = ({navigation}) => {
                     }>Jln. BKM Timur no. 4, Sukap...</Text>
                 </View>
             </View>
-            <TouchableOpacity onPress={() => navigation.navigate('Order')}>
+            <TouchableOpacity onPress={() => navigation.navigate('LaundryBag')}>
                 <View style={{width: 42, height: 42,justifyContent:'center', alignItems: 'center', backgroundColor: '#E3F4FF', borderRadius: 42, marginLeft: 15, marginRight: 8}}>
                     <Image
                     source={shopping_bag}

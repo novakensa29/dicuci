@@ -20,20 +20,7 @@ const Order = () => {
 const Oyrder = ({navigation}) => {
     return (
         <View style={{backgroundColor:'white', width:'100%', height:'100%'}}>
-            <TouchableOpacity onPress={() => navigation.navigate('Favorites')}>
-              <View style= {{width: 50, height: 50, borderWidth: 1}} >
-              <Image
-                    source={require('../../Assets/Icon/order.png')}
-                    resizeMode='contain'
-                    style = {{
-                        width: 24,
-                        height: 24,
-                        // tintColor: focused ? '#41A3F0' : '#E0E4EB'
-                    }}
-                    />
-                <Text>Order</Text>
-              </View>
-            </TouchableOpacity>
+            
         </View>
     )
 }

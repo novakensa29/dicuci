@@ -9,7 +9,7 @@ const barang = [
     },
     {
         id: 2,
-        gambar: require('../Image/dress.png'),
+        gambar: require('../Image/dress2.png'),
         judul: 'Satuan Premium Express 1 Hari, Cikutra',
         toko: 'Tayaka Laundry',
         jarak: '0.5 km dari lokasi Anda',
@@ -17,7 +17,7 @@ const barang = [
     },
     {
         id: 3,
-        gambar: require('../Image/sepatu.png'),
+        gambar: require('../Image/whitesneakers.png'),
         judul: 'Sepatu Besok Bersih, Cikutra',
         toko: 'Tayaka Laundry',
         jarak: '0.5 km dari lokasi Anda',

@@ -3,6 +3,7 @@ import { Image, StyleSheet, Text, View } from 'react-native';
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Home from "../Home/Index";
 import Order from "../MyOrder/order";
+import MyOrderScreen from '../MyOrder/MyOrderScreen';
 import Favorites from "../Favorite/favorites";
 
 const Tab = createBottomTabNavigator();
@@ -34,6 +35,7 @@ const Tabs = () => {
             name='Home' 
             component={Home}
             options={{
+                title: '',
                 tabBarIcon: ({focused}) => (
                     <View style={{alignItems: 'center', justifyContent: 'center', top: 10}}>
                         <Image
@@ -46,6 +48,14 @@ const Tabs = () => {
 
                             }}
                         />
+                        <Text
+                            style={{
+                            fontSize: 10,
+                            fontWeight: '500',
+                            color: focused ? '#41A3F0' : '#E0E4EB',
+                            }}>
+                            Home
+                        </Text>
                     </View>
                 ),
             }}/>
@@ -53,6 +63,7 @@ const Tabs = () => {
             name='Order' 
             component={Order}
             options={{
+                title: '',
                 tabBarIcon: ({focused}) => (
                     <View style={{alignItems: 'center', justifyContent: 'center', top: 10}}>
                         <Image
@@ -65,6 +76,14 @@ const Tabs = () => {
 
                             }}
                         />
+                        <Text
+                            style={{
+                            fontSize: 10,
+                            fontWeight: '500',
+                            color: focused ? '#41A3F0' : '#E0E4EB',
+                            }}>
+                            My Order
+                        </Text>
                     </View>
                 ),
             }}
@@ -73,6 +92,7 @@ const Tabs = () => {
             name='Favorite' 
             component={Favorites}
             options={{
+                title: '',
                 tabBarIcon: ({focused}) => (
                     <View style={{alignItems: 'center', justifyContent: 'center', top: 10}}>
                         <Image
@@ -85,6 +105,14 @@ const Tabs = () => {
 
                             }}
                         />
+                        <Text
+                            style={{
+                            fontSize: 10,
+                            fontWeight: '500',
+                            color: focused ? '#41A3F0' : '#E0E4EB',
+                            }}>
+                            Favorites
+                        </Text>
                     </View>
                 ),
             }}
